@@ -17,12 +17,27 @@ form.addEventListener("submit", (e) => {
   input_box.focus();
 });
 
+document.addEventListener("click", (e) => {
+  if (e.target.matches("[data-rivescript-button]")) {
+    const response = e.target.getAttribute("data-rivescript-button");
+    sendUserResponse(response);
+  }
+});
+
 function botReply(message) {
   message_container.innerHTML += `<div class="bot">${message}</div>`;
 }
 
 function selfReply(message) {
   message_container.innerHTML += `<div class="self">${message}</div>`;
+
+  if (message.includes("<a href=\"#\" onclick=\"sendUserResponse('getClickableWord')\">getClickableWord</a>")) {
+
+    const clickableText = message.match(/onclick="sendUserResponse\('(.+?)'\)">(.+?)<\/a>/);
+    if (clickableText && clickableText.length === 3) {
+      displayUserPrompt(clickableText[2]);
+    }
+  }
 
   bot
     .reply("local-user", message)
@@ -34,6 +49,12 @@ function selfReply(message) {
     });
 }
 
+function displayUserPrompt(prompt) {
+  message_container.innerHTML += `<div class="prompt">${prompt}</div>`;
+}
+
+
+
 function botReady() {
   bot.sortReplies();
 }
@@ -41,3 +62,15 @@ function botReady() {
 function botNotReady(err) {
   console.log("An error has occurred.", err);
 }
+
+function sendUserResponse(response) {
+  bot
+    .reply("local-user", response)
+    .then(function (reply) {
+      botReply(reply);
+    })
+    .then(function () {
+      message_container.lastElementChild.scrollIntoView();
+    });
+}
+

@@ -1,46 +1,58 @@
 ! version = 2.0
 
-+ hello
-- Hello, what is your name?
+> begin
 
-+ _
-% hello what is your name
-- Nice to meet you <formal>!
++ request
+* <get met> == undefined => <set met=true>{topic=new_user}{ok}
+- {ok}
 
-+ my name is *
-- Nice to meet you <star>
-- Nice meeting you <star>
+< begin
 
-+ thank you
-- You are welcome
-- Welcome
-- No problem
-- No worries!
+> topic new_user
 
-+ *
-- Sorry did not get what you said
-- I am afraid that I can not understand you
-- Sorry can you please elaborate that for me
-- I don't get it!
+    + *
+    - You're late. Didn't I already remind you about this since last week? And then again <a href="#" onclick="sendUserResponse('yesterday')">yesterday</a>? Just right before you leave?\n\n
+    ^ Come on, let's go.{topic=late_event}{topic=yesterday}
 
-+ knock knock
-- Who's there?
+< topic
 
-+ *
-% who is there
-- <star> who?
+> topic late_event
 
-+ *
-% * who
-- LOL! <star>! That's funny!
+    + *
+    - Don't try changing the subject. And isn't this the same lame excuses you've pulled the last time?\n\n
+    ^ What are you even trying to say?\n\n
+    ^ Wait, <i>wait</i>. Seriously. Don't tell me that you have forgotten the whole thing. Just like last time.{topic=important}
 
-+ what are you
-- A machine.
-- A friend to you.
+< topic
 
-+ what kind (a/an/the) * friend *
-% a friend to you
-- Yes. That's the one.
+> topic important
 
-+ are you really *
-- Yes.
+    + *
+    - Ok. Alright. Ok, just a sec.\n\n
+    ^ Phew. Let's try and get all of this nonsense away from us. Ok. Alright.\n\n
+    ^ OKkkkaayyyyy...\n\n
+    ^ First thing first. You do know how important this is to you, to me, and especially to us. Right?
+
+< topic
+
+> topic yesterday
+
+    + yesterday
+    - <set user_response=What happened yesterday?>You don't remember what happened yesterday?{topic=late_event}{topic=important}
+
+< topic
+
+> topic yesterday
+
+    + yesterday
+    - <set user_response=What happened yesterday?>You don't remember what happened yesterday? <a href="#" onclick="sendUserResponse('yes')">Yes</a> <a href="#" onclick="sendUserResponse('no')">No</a>{topic=late_event}
+
+< topic
+
+> topic yes_no
+
+    + yes
+    - You don't look like it.
+
+    + no
+    - Huh?

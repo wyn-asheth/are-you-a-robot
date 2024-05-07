@@ -21,6 +21,7 @@
 ! sub i'd       = i would
 ! sub i've      = i have
 ! sub i'll      = i will
+! sub let's     = lets
 ! sub don't     = do not
 ! sub isn't     = is not
 ! sub you'd     = you would
@@ -170,3 +171,4 @@
 ! array measure    = inch in centimeter cm millimeter mm meter m inches centimeters millimeters meters
 ! array yes        = yes yeah yep yup ya yea sure ok
 ! array no         = no nah nope nay
+! array colors     = red blue green yellow
