@@ -8,51 +8,188 @@
 
 < begin
 
-> topic new_user
+// new user to you're late
+ > topic new_user
 
     + *
-    - You're late. Didn't I already remind you about this since last week? And then again <a href="#" onclick="sendUserResponse('yesterday')">yesterday</a>? Just right before you leave?\n\n
-    ^ Come on, let's go.{topic=late_event}{topic=yesterday}
+    - <a href="#" onclick="sendUserResponse('time')">You're late</a>. Didn't I already remind you about this since last week? And then again <a href="#" onclick="sendUserResponse('yesterday')">yesterday</a>? Just right before you leave?\n\n
+    ^ Come on, let's go.{topic=time}
+
+ < topic
+
+// new user to yesterday
+ > topic new_user
+
+    + *
+    - <a href="#" onclick="sendUserResponse('time')">You're late</a>. Didn't I already remind you about this since last week? And then again <a href="#" onclick="sendUserResponse('yesterday')">yesterday</a>? Just right before you leave?\n\n
+    ^ Come on, let's go.{topic=yesterday}
+
+ < topic
+
+// new user to dont try (dont_try)
+
+ > topic new_user
+
+    + *
+    - <a href="#" onclick="sendUserResponse('time')">You're late</a>. Didn't I already remind you about this since last week? And then again <a href="#" onclick="sendUserResponse('yesterday')">yesterday</a>? Just right before you leave?\n\n
+    ^ Come on, let's go.{topic=time}
+
+ < topic
+
+// you're late(time) to yesterday
+
+ > topic time
+
+    + time
+    - <set time=<formal>>And what's with the question anyway...? {weight=20}{topic=yesterday}
+    - <set time=<formal>>Ok. Fine. It's 10 past 8 now, and the event isn't starting until 9.\n\n
+    ^ But you do know how nervous you can be in crowded places, right?{weight=26}{topic=yesterday}
+
+    + yesterday
+    - <set yesterday=<formal>><set user_response=What happened yesterday?>You don't remember what happened yesterday?{topic=yesterday}
+
+    + *
+    - Don't try changing the subject.\n\n
+    ^ And isn't this the <a href="#" onclick="sendUserResponse('same lame excuse')">same lame excuse</a> you've pulled last time...?\n\n
+    ^ What are you even trying to say?{topic=forgotten}
+
+ < topic
+
+// forgotten to important
+> topic forgotten
+
+   + *
+   - Wait, <i>wait</i>. Seriously. Don't tell me that you have forgotten the whole thing.\n\n
+   ^ Just like last time. And last <i>last</i> time.{topic=important}
+
+   + same lame excuse
+   - <set same lame excuse=<formal>>Let's see. You have a tendency to forget things, that's for sure.\n\n
+   ^ You always act like you don't have a clue of what's going on. But you do. Maybe.\n\n
+   ^ You always come back here forgetting everything we have just mentioned moments ago.\n\n
+   ^ And most importantly. You don't even recognize me!
+   
+   + time
+    - <set time=<formal>>And what's with the question anyway...? {weight=20}
+    - <set time=<formal>>Ok. Fine. It's 10 past 8 now, and the event isn't starting until 9.\n\n
+    ^ But you do know how nervous you can be in crowded places, right?{weight=26}
+ 
+   + yesterday
+    - <set yesterday=<formal>><set user_response=What happened yesterday?>You don't remember what happened yesterday?
 
 < topic
 
-> topic late_event
 
-    + *
-    - Don't try changing the subject. And isn't this the same lame excuses you've pulled the last time?\n\n
-    ^ What are you even trying to say?\n\n
-    ^ Wait, <i>wait</i>. Seriously. Don't tell me that you have forgotten the whole thing. Just like last time.{topic=important}
+// important to excuse
+ > topic important
+
+   + *
+   - So, you're not joking right now? Huh...\n\n\n
+   ^ I could really use a moment to calm down first.\n\n
+   ^ Ok. Alright.\n\n\n
+   ^ First thing first. You do know how important this is to you, to me, and especially to us. Right?{topic=re_introduction}
+
+   + same lame excuse
+   - <set same lame excuse=<formal>>Let's see. You have a tendency to forget things, that's for sure.\n\n
+   ^ You always act like you don't have a clue of what's going on. But you do. Maybe.\n\n
+   ^ You always come back here forgetting everything we have just mentioned moments ago.\n\n
+   ^ And most importantly. You don't even recognize me!
+
+   + time
+    - <set time<formal>>And what's with the question anyway...? {weight=20}
+    - <set time=<formal>>Ok. Fine. It's 10 past 8 now, and the event isn't starting until 9.\n\n
+    ^ But you do know how nervous you can be in crowded places, right?{weight=26}
 
 < topic
 
-> topic important
 
-    + *
-    - Ok. Alright. Ok, just a sec.\n\n
-    ^ Phew. Let's try and get all of this nonsense away from us. Ok. Alright.\n\n
-    ^ OKkkkaayyyyy...\n\n
-    ^ First thing first. You do know how important this is to you, to me, and especially to us. Right?
-
-< topic
+// yesterday to forgotten
 
 > topic yesterday
 
-    + yesterday
-    - <set user_response=What happened yesterday?>You don't remember what happened yesterday?{topic=late_event}{topic=important}
+   + yesterday
+   - <set yesterday=<formal>><set user_response=What happened yesterday?>You don't remember what happened yesterday?
 
+   + *
+   - Don't try changing the subject.\n\n
+   ^ And isn't this the <a href="#" onclick="sendUserResponse('same lame excuse')">same lame excuse</a> you've pulled last time...?\n\n
+   ^ What are you even trying to say?{topic=forgotten}
+
+   + time
+    - <set time=<formal>>And what's with the question anyway...? {weight=20}
+    - <set time=<formal>>Ok. Fine. It's 10 past 8 now, and the event isn't starting until 9.\n\n
+    ^ But you do know how nervous you can be in crowded places, right?{weight=26}
+   
 < topic
+
+
+// yesterday to you're late
+
 
 > topic yesterday
 
-    + yesterday
-    - <set user_response=What happened yesterday?>You don't remember what happened yesterday? <a href="#" onclick="sendUserResponse('yes')">Yes</a> <a href="#" onclick="sendUserResponse('no')">No</a>{topic=late_event}
+   + yesterday
+   - <<set yesterday=<formal>><set user_response=What happened yesterday?>You don't remember what happened yesterday?{topic=time}
+
+   + time
+   - <set time=<formal>>And what's with the question anyway...? {weight=20}
+   - <set time=<formal>>Ok. Fine. It's 10 past 8 now, and the event isn't starting until 9.\n\n
+   ^ But you do know how nervous you can be in crowded places, right?{weight=26}
+
+   + *
+   - Don't try changing the subject.\n\n
+   ^ And isn't this the <a href="#" onclick="sendUserResponse('same lame excuse')">same lame excuse</a> you've pulled last time...?\n\n
+   ^ What are you even trying to say?{topic=forgotten}
 
 < topic
 
-> topic yes_no
+// you're late to forgotten
 
-    + yes
-    - You don't look like it.
+> topic time
 
-    + no
-    - Huh?
+   + time
+   - <set time=<formal>>And what's with the question anyway...? {weight=20}{topic=forgotten}
+   - <set time=<formal>>Ok. Fine. It's 10 past 8 now, and the event isn't starting until 9.\n\n
+   ^ But you do know how nervous you can be in crowded places, right?{weight=26}{topic=forgotten}
+
+   + *
+   - Don't try changing the subject.\n\n
+   ^ And isn't this the <a href="#" onclick="sendUserResponse('same lame excuse')">same lame excuse</a> you've pulled last time...?\n\n
+   ^ What are you even trying to say?{topic=forgotten}
+
+< topic
+
+> topic re_introduction
+
+   + time
+   * <get time> == undefined => That is not the answer I am looking for.
+   * <get time> == undefined => You know what to do.
+   * <get time> == undefined => We have already went passed that point. {weight=30}
+   - You have already asked the question.
+   - It is much wiser to not repeating yourself.
+   - What's the point in repeating something you already know?
+
+   + yesterday
+   * <get yesterday> == undefined => There is no point in going back. {weight=30}
+   * <get yesterday> == undefined => That is not the question I am looking for
+   * <get yesterday> == undefined => That is not the answer I am looking for.
+   * <get yesterday> == undefined => You know what to ask and what to do.
+   - But you know the answer already.
+   - What's the point of asking it all again?
+   - It's silly to try and get me to repeat myself.
+
+   + same lame excuse
+   * <get same lame excuse> == undefined => If you were to ask this question <i>just a tid bit earlier</i>, then perhaps my answer would've been different.
+   * <get same lame excuse> == undefined => If you were to ask this question <i>just a tid bit earlier</i>, then perhaps my answer would've been different.\n\n
+   ^ But,\n\n
+   ^ do you really want to know?
+   - Don't try asking it the second time.
+
+   + [hello|hi|yo|good morning|good evening|good afternoon]
+   - Let's start from there then, if this is really what you want.
+
+   + [*] my name [is] [*]
+   - So we are back to the beginning now. The name and the age and personal goals and all that sort of things...
+
+   
+
+ < topic
