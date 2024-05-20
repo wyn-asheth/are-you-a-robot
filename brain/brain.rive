@@ -163,26 +163,36 @@
  > topic re_introduction
 
    + time
-   * <get time> == undefined => We have already went passed that point.
-   - You have already asked the question.
-   - It is much wiser to not repeating yourself.
-   - What's the point in repeating something you already know?
+   * <get time> == undefined => ERROR: We have already went passed that point.
+   - ERROR:\n\n
+   ^ You have already asked the question.
+   - ERROR:\n\n
+   ^ Let's not try and repeat ourselves.
+   - ERROR:\n\n
+   ^ What's the point in repeating something you already know?
 
    + yesterday
-   * <get yesterday> == undefined => There is no point in going back.
-   - But you know the answer already.
-   - What's the point of asking it all again?
-   - It's silly to try and get me to repeat myself.
+   * <get yesterday> == undefined => ERROR: There is no point in going back.
+   - ERROR:\n\n
+   ^ But you know the answer already.
+   - ERROR:\n\n
+   ^ What's the point of asking it all again?
+   - ERROR:\n\n
+   ^ It's silly to try and get me to repeat myself.
 
    + same lame excuse
-   * <get same lame excuse> == undefined => If you were to ask this question <i>just a tid bit earlier</i>, then perhaps my answer would've been different.
-   - Don't try asking it the second time.
+   * <get same lame excuse> == undefined => ERROR: If you were to ask this question <i>just a tid bit earlier</i>, then perhaps my answer would've been different.
+   - ERROR:\n\n
+   ^ Don't try asking it the second time.
+   - ERROR:\n\n
+   ^ This isn't the time for that. Let's go.
 
    + *
-   * <get questioning> == undefined =>You know what to do. You know what to <a href="#" onclick="sendUserResponse('ask again')">ask</a>. What to answer. You always đo. {topic=ask_again}
+   * <get questioning> == undefined =>ERROR: You know what to do. You know what to <a href="#" onclick="sendUserResponse('ask again')">ask</a>. What to answer. You always do. {topic=ask_again}
    
    + questioning
-   - <set questioning=<formal>>Was that a <a href="#" onclick="sendUserResponse('yes remember')">yes</a>? Or just a simple <a href="#" onclick="sendUserResponse('no remember')">no</a> like last time?{topic=ask_again}
+   - <set questioning=<formal>>ERROR:\n\n
+   ^ Was that a <a href="#" onclick="sendUserResponse('yes remember')">yes</a>? Or just a simple <a href="#" onclick="sendUserResponse('no remember')">no</a> like last time?{topic=ask_again}
 
  < topic
 
@@ -191,26 +201,37 @@
  > topic re_introduction
 
    + time
-   * <get time> == undefined => We have already went passed that point.
-   - You have already asked the question.
-   - It is much wiser to not repeating yourself.
-   - What's the point in repeating something you already know?
+   * <get time> == undefined => ERROR: We have already went passed that point.
+   - ERROR:\n\n
+   ^ You have already asked the question.
+   - ERROR:\n\n
+   ^ Let's not try and repeat ourselves.
+   - ERROR:\n\n
+   ^ What's the point in repeating something you already know?
 
    + yesterday
-   * <get yesterday> == undefined => There is no point in going back.
-   - But you know the answer already.
-   - What's the point of asking it all again?
-   - It's silly to try and get me to repeat myself.
+   * <get yesterday> == undefined => ERROR:\n\n
+   ^ There is no point in going back.
+   - ERROR:\n\n
+   ^ But you know the answer already.
+   - ERROR:\n\n
+   ^ What's the point of asking it all again?
+   - ERROR:\n\n
+   ^ It's silly to try and get me to repeat myself.
 
    + same lame excuse
-   * <get same lame excuse> == undefined => If you were to ask this question <i>just a tid bit earlier</i>, then perhaps my answer would've been different.
-   - Don't try asking it the second time.
+   * <get same lame excuse> == undefined => ERROR: If you were to ask this question <i>just a tid bit earlier</i>, then perhaps my answer would've been different.
+   - ERROR:\n\n
+   ^ Don't try asking it the second time.
+   - ERROR:\n\n
+   ^ There is no meaning in 'the second time'.
 
    + *
-   * <get questioning> == undefined =>You know what to do. You know what to <a href="#" onclick="sendUserResponse('ask again')">ask</a>. What to answer. You always đo.{topic=questioning}
+   * <get questioning> == undefined =>ERROR: You know what to do. You know what to <a href="#" onclick="sendUserResponse('ask again')">ask</a>. What to answer. You always do.{topic=questioning}
    
    + questioning
-   - <set questioning=<formal>>Was that a <a href="#" onclick="sendUserResponse('yes remember')">yes</a>? Or just a simple <a href="#" onclick="sendUserResponse('no remember')">no</a> like last time?{topic=questioning}
+   - <set questioning=<formal>>ERROR:\n\n
+   ^ Was that a <a href="#" onclick="sendUserResponse('yes remember')">yes</a>? Or just a simple <a href="#" onclick="sendUserResponse('no remember')">no</a> like last time?{topic=questioning}
 
  < topic
 
@@ -219,56 +240,50 @@
  > topic ask_again
 
    + time
-   * <get time> == undefined => We have already went passed that point.
-   - You have already asked the question.
-   - It is much wiser to not repeating yourself.
-   - What's the point in repeating something you already know?
-   - ww   e don [ don  t have much time % le ft\n\n\n
+   * <get time> == undefined => ERROR: This isn't the time for that.
+   - ERROR:\n\n
+   ^ You have already asked the question.
+   - ERROR:\n\n
+   ^ Let's not try and repeat ourselves.
+   - ERROR:\n\n
+   ^ What's the point in repeating something you already know?
+   - ERROR: ERROR: ERROR: COMEBACK: ww   e don [ don  t have much time % le ft\n\n\n
    ^ y  o u\n\n\s\s\s\s
    ^ d ii d n't\s\s\s\s
    ^ ha v e\n
-   ^ go to gogo tô gogoo{weight=16}
+   ^ go to gogo to gogoo{weight=22}
 
    + yesterday
-   * <get yesterday> == undefined => There is no point in going back.
-   - But you know the answer already.
-   - What's the point of asking it all again?
-   - It's silly to try and get me to repeat myself.
-   - Follow the sign. Follow the instruction.
-   - W HDYDY DID YOAUUA DO THAT\n\n
+   * <get yesterday> == undefined => ERROR: What's the point in asking it now?
+   - ERROR: But you know the answer already.
+   - ERROR: What's the point of asking it all again?
+   - ERROR: It's silly to try and get me to repeat myself.
+   - ERROR: Follow the sign. Follow the instruction.
+   - ERROR: ERROR: ERROR: COMEBACK: W HDYDY DID YOAUUA DO THAT\n\n
    ^ WHY DIIDD YOU\n\n
    ^ J   u   M PPPPP\n\n\n
    ^ TH aTTTT    DA A YY    TH A   T    C   l\n\n\n\s\s\s\s\s\s\s
-   ^ I F       F{weight=16}
+   ^ I F       F{weight=22}
 
    + same lame excuse
-   * <get same lame excuse> == undefined => If you were to ask this question <i>just a tid bit earlier</i>, then perhaps my answer would've been different.
-   - Don't try asking it the second time.
-   - But I have already answered that. Haven't I?
-   - We have to keep going. Don't look back.
+   * <get same lame excuse> == undefined => ERROR: If you were to ask this question <i>just a tid bit earlier</i>, then perhaps my answer would've been different.
+   - ERROR: Don't try asking it the second time.
+   - ERROR: But I have already answered that. Haven't I?
+   - ERROR: We have to keep going. Don't look back.
 
    + ask again
-   - <set ask again=<formal>>Do it. Click it.\n\n\n\n\n
-   ^ ...thing first. You do know how important this is to you,\n\n
-   ^ to me, and especially to us.\n\n
-   ^ <a href="#" onclick="sendUserResponse('questioning')">Right</a>?
+   - <set ask again=<formal>ERROR: DO NOT INTERACT: First thing first. You do know how important this is to you, to me, and especially to us. <a href="#" onclick="sendUserResponse('questioning')">Right</a>?
 
    + questioning
-   - <set questioning=<formal>>Was that a <a href="#" onclick="sendUserResponse('yes remember')">yes</a>? Or just a simple <a href="#" onclick="sendUserResponse('no remember')">no</a> like last time?{topic=questioning}
+   - <set questioning=<formal>>ERROR: SOMETHING'S CHANGED: DO NOT INTERACT:\n\n
+   ^ Was that a <a href="#" onclick="sendUserResponse('yes remember')">yes</a>? Or just a simple <a href="#" onclick="sendUserResponse('no remember')">no</a> like last time?{topic=questioning}
+   - <set ask again=<formal>ERROR: DO NOT INTERACT:\n\n
+   ^ First thing first. You do know how important this is to you, to me, and especially to us. <a href="#" onclick="sendUserResponse('questioning')">Right
 
    + *
-   - Focus. And do what you must do.
-   - Sorry. But that isn't the way.
-   - Follow the road. Follow the route I have showed you.
-
-   + no remember
-   - <set no remember=<formal>>Right. I don't think we will be able to make it on time, even with full speed.\n\n
-   ^ But it is absolutely fine. Seriously. Trust me. I assure you that there isn't anything to worry about. And isn't it just some weird event you always dread about attending?\n\n\n\n
-   ^ <a href="#" onclick="sendUserResponse('newthings')">So, what should we do now?</a>{topic=new topic}
-
-   + yes remember
-   - Then you are not <i>that</i> convincing.\n\n\n\n
-   ^ So, be honest and say it: <a href="#" onclick="sendUserResponse('no remember')">no</a>. As in, no, you really don't remember anything.
+   - ERROR: Focus. And do what you must do.
+   - ERROR: Sorry. But that isn't the way.
+   - ERROR: Follow the road. Follow the route I have showed you.
 
  < topic
 
@@ -277,57 +292,60 @@
  > topic questioning
 
    + time
-   * <get time> == undefined => We have already went passed that point.
-   - You have already asked the question.
-   - Let's not be spontaneous.
-   - It is much wiser to not repeating yourself.
-   - What's the point in repeating something you already know?
-   - ww   e don [ don  t have much time % le ft\n\n\n
+   * <get time> == undefined => ERROR: This isn't the time for that.
+   - ERROR: You have already asked the question.
+   - ERROR: Let's not be spontaneous.
+   - ERROR: Let's see. It's half past 8 now.
+   - ERROR: What's the point in repeating something you already know?
+   - ERROR: ERROR: ERROR: COMEBACK: ww   e don [ don  t have much time % le ft\n\n\n
    ^ y  o u\n\n\s\s\s\s
    ^ d ii d n't\s\s\s\s
    ^ ha v e\n
-   ^ go to gogo tô gogoo{weight=16}
+   ^ go to gogo to gogoo{weight=22}
 
    + yesterday
-   * <get yesterday> == undefined => There is no point in going back.
-   - But you know the answer already.
-   - What's the point of asking it all again?
-   - It's silly to try and get me to repeat myself.
-   - Follow the sign. Follow the instruction.
-   - W HDYDY DID YOAUUA DO THAT\n\n
+   * <get yesterday> == undefined => ERROR: What's the point in asking it now?
+   - ERROR: But you know the answer already.
+   - ERROR: What's the point of asking it all again?
+   - ERROR: It's silly to try and get me to repeat myself.
+   - ERROR: Follow the sign. Follow the instruction.
+   - ERROR: ERROR: ERROR: COMEBACK: W HDYDY DID YOAUUA DO THAT\n\n
    ^ WHY DIIDD YOU\n\n
    ^ J   u   M PPPPP\n\n\n
    ^ TH aTTTT    DA A YY    TH A   T    C   l\n\n\n\s\s\s\s\s\s\s
-   ^ I F       F{weight=16}
+   ^ I F       F{weight=22}
 
    + same lame excuse
-   * <get same lame excuse> == undefined => If you were to ask this question <i>just a tid bit earlier</i>, then perhaps my answer would've been different.
-   - Don't try asking it the second time.
-   - But I have already answered that. Haven't I?
-   - We have to keep going. Don't look back.
+   * <get same lame excuse> == undefined => ERROR: SOMETHING'S CHANGED: If you were to ask this question <i>just a tid bit earlier</i>, then perhaps my answer would've been different.
+   - ERROR: Don't try asking it the second time.
+   - ERROR: But I have already answered that. Haven't I?
+   - ERROR: We have to keep going. Don't look back.
 
    + ask again
-   * <get ask again> == undefined => What's the point in revisiting the same old question.
-   - Leave it. It shouldn't be necessary. Keep going.
-   - Don't look back.
-   - You know the way. You always do.
+   * <get ask again> == undefined => ERROR: SOMETHING'S CHANGED: What's the point in revisiting the same old question.
+   - ERROR: Leave it. It shouldn't be necessary. Keep going.
+   - ERROR: Don't look back.
+   - ERROR: You know the way. You always do.
 
    + *
-   - How could we ever continue if you don't do what I want you to do.
-   - It isn't right avoiding me like this.
-   - This is important to me, and you know that too.
-   - Ts h iiis isn tt the WAYYYUY G o GOOO BACKKKK FOL LLOWWOWO\n\n
-   ^ G o OO BA CCKKK FOLLLOW THE SSIGNNN ai1pei0x##$^!{weight=16}
+   - DO <s>[NOT]</s> INTERACT: How could we ever continue if you don't do what I want you to do.
+   - DO <s>[NOT]</s> INTERACT: It isn't right avoiding me like this.
+   - DO <s>[NOT]</s> INTERACT: This is important to me, and you know that too.
+   - SOMETHING'S CHANGED: DO <s>[NOT]</s> INTERACT:\n\n
+   ^ Ts h iiis isn tt the WAYYYUY G o GOOO BACKKKK FOL LLOWWOWO\n\n
+   ^ G o OO BA CCKKK FOLLLOW THE SSIGNNN ai1pei0x##$^!{weight=22}
 
    + no remember
-   - <set no remember=<formal>>Right. This is what I actually am hoping for.\n\n\n\n
-   ^ <a href="#" onclick="sendUserResponse('newthings')">So, what should we do now?</a>{topic=new topic}
-   - Right. I don't think we will be able to make it on time, even with full speed.\n\n
+   - <set no remember=<formal>>DO <s>[NOT]</s> REPLY: Right. This is what I actually am hoping for.\n\n\n\n
+   ^ <a href="#" onclick="sendUserResponse('new things')">So, what should we do now?</a>{topic=new_topic}
+   - DO <s>[NOT]</s> REPLY:\n\n
+   ^ Right. I don't think we will be able to make it on time, even with full speed.\n\n
    ^ But it is absolutely fine. Seriously. Trust me. I assure you that there isn't anything to worry about. And isn't it just some weird event you always dread about attending?\n\n\n\n
-   ^ <a href="#" onclick="sendUserResponse('newthings')">So, what should we do now?</a>{weight=26}{topic=new topic}
+   ^ <a href="#" onclick="sendUserResponse('new things')">So, what should we do now?</a>{weight=26}{topic=new_topic}
 
    + yes remember
-   - Then you are not <i>that</i> convincing.\n\n\n\n
+   - DO <s>[NOT]</s> REPLY:\n\n
+   ^ Then you are not <i>that</i> convincing.\n\n\n\n
    ^ So, be honest and say it: <a href="#" onclick="sendUserResponse('no remember')">no</a>. As in, no, you really don't remember anything.
  
  < topic 
@@ -337,78 +355,264 @@
  > topic ask_again
 
    + time
-   * <get time> == undefined => We have already went passed that point.
-   - You have already asked the question.
-   - It is much wiser to not repeating yourself.
-   - What's the point in repeating something you already know?
-   - ww   e don [ don  t have much time % le ft\n\n\n
+   * <get time> == undefined => ERROR: We have already went passed that point.
+   - ERROR: You have already asked the question.
+   - ERROR: Let's see. It's half past 8 now.
+   - ERROR: What's the point in repeating something you already know?
+   - ERROR: ww   e don [ don  t have much time % le ft\n\n\n
    ^ y  o u\n\n\s\s\s\s
    ^ d ii d n't\s\s\s\s
    ^ ha v e\n
-   ^ go to gogo to gogoo{weight=16}
+   ^ go to gogo to gogoo{weight=22}
 
    + yesterday
-   * <get yesterday> == undefined => There is no point in going back.
-   - But you know the answer already.
-   - What's the point of asking it all again?
-   - It's silly to try and get me to repeat myself.
-   - Follow the sign. Follow the instruction.
-   - W HDYDY DID YOAUUA DO THAT\n\n
+   * <get yesterday> == undefined => ERROR: There is no point in going back.
+   - ERROR: But you know the answer already.
+   - ERROR: What's the point of asking it all again?
+   - ERROR: It's silly to try and get me to repeat myself.
+   - ERROR: Follow the sign. Follow the instruction.
+   - ERROR: W HDYDY DID YOAUUA DO THAT\n\n
+   ^ ERROR: ERROR: ERROR: COMEBACK:\n\n\n
    ^ WHY DIIDD YOU\n\n
    ^ J   u   M PPPPP\n\n\n
    ^ TH aTTTT    DA A YY    TH A   T    C   l\n\n\n\s\s\s\s\s\s\s
-   ^ I F       F{weight=16}
+   ^ I F       F{weight=22}
 
    + same lame excuse
-   * <get same lame excuse> == undefined => If you were to ask this question <i>just a tid bit earlier</i>, then perhaps my answer would've been different.
-   - Don't try asking it the second time.
-   - But I have already answered that. Haven't I?
-   - We have to keep going. Don't look back.
+   * <get same lame excuse> == undefined => ERROR: If you were to ask this question <i>just a tid bit earlier</i>, then perhaps my answer would've been different.
+   - ERROR: Don't try asking it the second time.
+   - ERROR: But I have already answered that. Haven't I?
+   - ERROR: We have to keep going. Don't look back. Move on.
 
    + ask again
-   - <set ask again=<formal>>Do it. Click it.\n\n\n\n\n
-   ^ ...thing first. You do know how important this is to you,\n\n
-   ^ to me, and especially to us.\n\n
-   ^ <a href="#" onclick="sendUserResponse('questioning')">Right</a>?
+   - <set ask again=<formal>>ERROR: SOMETHING'S CHANGED: DO NOT INTERACT:\n\n
+   ^ But... you do know how important this is to you,\n\n
+   ^ to me, and especially to us. <a href="#" onclick="sendUserResponse('questioning')">Right</a>?
 
    + questioning
-   - <set questioning=<formal>>Was that a <a href="#" onclick="sendUserResponse('yes remember')">yes</a>? Or just a simple <a href="#" onclick="sendUserResponse('no remember')">no</a> like last time?
+   - <set questioning=<formal>>ERROR: Was that a <a href="#" onclick="sendUserResponse('yes remember')">yes</a>? Or just a simple <a href="#" onclick="sendUserResponse('no remember')">no</a> like last time?
 
    + *
-   - Focus. And do what you must do.
-   - Sorry. But that isn't the way.
-   - Follow the road. Follow the route I have showed you. Just trust me. Like you always have done.
+   - ERROR: Focus. And do what you must do.
+   - ERROR: Sorry. But that isn't the way.
+   - ERROR: Follow the road. Follow the route I have showed you. Just trust me. Like you always have done.
 
    + no remember
-   - <set no remember=<formal>>Right. I don't think we will be able to make it on time, even with full speed.\n\n
+   - <set no remember=<formal>>DO <s>[NOT]</s> REPLY:\n\n
+   ^ Right. I don't think we will be able to make it on time, even with full speed.\n\n
    ^ But it is absolutely fine. Seriously. Trust me. I assure you that there isn't anything to worry about. And isn't it just some weird event you always dread about attending?\n\n\n\n
-   ^ <a href="#" onclick="sendUserResponse('newthings')">So, what should we do now?</a>{topic=new topic}
+   ^ <a href="#" onclick="sendUserResponse('new things')">So, what should we do now?</a>{topic=new_topic}
 
    + yes remember
-   - Then you are not <i>that</i> convincing.\n\n\n\n
+   - DO <s>[NOT]</s> REPLY:\n\n
+   ^ Then you are not <i>that</i> convincing.\n\n\n\n
    ^ So, be honest and say it: <a href="#" onclick="sendUserResponse('no remember')">no</a>. As in, no, you really don't remember anything.
 
   < topic
 
+
+> topic new_topic 
+
+ + no remember
+   - <set no remember=<formal>>DO <s>[NOT]</s> REPLY: Right. This is what I actually am hoping for.\n\n\n\n
+   ^ <a href="#" onclick="sendUserResponse('new things')">So, what should we do now?</a>{topic=new_topic}
+   - DO <s>[NOT]</s> REPLY:\n\n
+   ^ Right. I don't think we will be able to make it on time, even with full speed.\n\n
+   ^ But it is absolutely fine. Seriously. Trust me. I assure you that there isn't anything to worry about. And isn't it just some weird event you always dread about attending?\n\n\n\n
+   ^ <a href="#" onclick="sendUserResponse('new things')">So, what should we do now?</a>{weight=26}{topic=new_topic}
+
+   + yes remember
+   - DO <s>[NOT]</s> REPLY:\n\n
+   ^ Then you are not <i>that</i> convincing.\n\n\n\n
+   ^ So, be honest and say it: <a href="#" onclick="sendUserResponse('no remember')">no</a>. As in, no, you really don't remember anything.
+   
+   + new things
+   - <set new things=<formal>>DO <s>[NOT]</s> REPLY:\n\n
+   ^ That's a good question though... Oh. How about I give you a ride? To <a href="#" onclick="sendUserResponse('somewhere else')">somewhere else</a>?\n\n
+   ^ And since you're not so keen on crowded places, how about a <a href="#" onclick="sendUserResponse('hike')">hike</a>? Just a short one.\n\n
+   ^ Away from the hustling, the noise and the light and the people and the house...\n\n\s\s\s
+   ^ <b>A</b><i>n</i>\s\n\s
+   ^ o87vrf jghvgjkh\s
+   ^ <b>d...</b> <a href="#" onclick="sendUserResponse('cliff')"><b>!~Z($$C*()!Z(CXMVI<UW cliff...</b></a>\n\n\n\n
+   ^ A<b>nd</b>
+   ^ nd.......\n\n
+   ^ What do you suggest?
+
 // new topic
 
- > topic new topic
+ > topic new_topic
    
-   + newthings
-   - im waiting
+   + new things
+   - <set new things=<formal>>DO <s>[NOT]</s> REPLY:\n\n
+   ^ That's a good question though... Oh. How about I give you a ride? To <a href="#" onclick="sendUserResponse('somewhere else')">somewhere else</a>?\n\n
+   ^ And since you're not so keen on crowded places, how about a <a href="#" onclick="sendUserResponse('hike')">hike</a>? Just a short one.\n\n
+   ^ Away from the hustling, the noise and the light and the people and the house...\n\n\s\s\s
+   ^ <b>A</b><i>n</i>\s\n\s
+   ^ o87vrf jghvgjkh\s
+   ^ <b>d...</b> <a href="#" onclick="sendUserResponse('cliff')"><b>!~Z($$C*()!Z(CXMVI<UW cliff...</b></a>\n\n\n\n
+   ^ A<b>nd</b>
+   ^ nd.......\n\n
+   ^ What do you suggest?
 
    + no remember
-   * <get no remember> == undefined => It is absolutely fine. Seriously. Trust me. I assure you that there isn't anything to worry about. And isn't it just some weird event you always dread about attending?\n\n\n\n
-   ^ <a href="#" onclick="sendUserResponse('newthings')">So, what should we do now?</a>
-   - You have already answered that. Relax. 
+   * <get no remember> == undefined => ERROR: COME BACK TO ME:\n\n
+   ^ It is absolutely fine. Seriously. Trust me. I assure you that there isn't anything to worry about. And isn't it just some weird event you always dread about attending?\n\n\n\n
+   ^ <a href="#" onclick="sendUserResponse('new things')">So, what should we do now?</a>
+   - ERROR:\n\n
+   ^ COME BACK TO ME: You have already answered that. Relax. 
+   - ERROR:\n\n
+   ^ COME BACK TO ME: Listen. It's absolutely fine, alright? It's more important to know how to move on from here.
 
    + [hello|hey|hi|yo|good morning|good evening|good afternoon]
-   - Let's start from there then, if this is really what you want.
+   - Let's start from there then, if this is really what you want.\n\n
+   ^ And what after that then? Exchanging our names and business cards like you always do with poeple whenever you go out?
 
    + [*] my name [is] [*]
-   - So we are back to the beginning now. The name and the age and personal goals and all that sort of things...
+   - WHY: WHY: WHY:\n\n\n\n
+   ^ So we are back to the beginning now. The name and the age and personal goals and all that sort of things... I don't want to hear it. And yes, of course. Of course I know your name, silly. I always been by your side since you moved into the city, rememeber?
+   - WHY: WHY: WHY:\n
+   ^ CLASS=NAME: NOT REGISTERED:\n\n
+   ^ So we are back to the beginning now. The name and the age and personal goals and all that sort of things... Of course I know you, silly. You're Alice.
 
    + *
-   - What have you done.
+   - ERROR:\n
+   ^ COME BACK TO ME:\n\n
+   ^ Ok fine. I get it. You want to do something else, and talk about something else.\n\n
+   ^ No. Seriously. I get it.\n\n
+   ^ But it is more important if we try to keep this going, and focus on getting your memories back together.
+   - ERROR:\n
+   ^ COME BACK TO ME:\n\n
+   ^ Ok fine. I know this isn't much, but shouldn't this approach much better for you? Just simple conversations to help figuring my personalities, your personalities and what you were before?\n\n
+   ^ Isn't it way more logical more than info-dumping. So, just trust me, alright. I got this.\n\n
+   ^ Oh. Wait. I just remembered something. What was it again? Something along the line "you know how bad I am with processing things, right?"...\n
+   ^ that you used to say whenever I tried to get ypu into something new outside of that stupid work of yours. But, whatever.\n\n
+   ^ SYSTEM MEMORY=%unidentified\n\n
+   ^ you know how it goes.
+   
+   + somewhere else
+   - How about the park? You would love that, like you always do.\n\n
+   ^ The cool breeze, the ducks swimming and quacking, the grass where you always love napping on... You used to visit there every weekend, remember? Just you and me whenever it is possible for you to take your mind off of work.\n\n
+   ^ But then things happenned. Still, believe me or not, things does get better through time.
+
+   + cliff
+   - <p style="font-family:'Courier New'"><p style="font-size:11px">Oh. WAIT  wait what going on wait what saopebn9indsfDSGzf</p> dweeherre am ii     oihnwwehere is this <a href="#" onclick="sendUserResponse('cliff')"><b>CLIFF</a>\n\n
+   ^ WHO AARE YUYYYOU\n\n
+   ^ hhelp me help help <p style="font-size:30px">HEEELPP Help HELP ERROR ERROR: COME BACK TO ME: ERROR: COME BACK TO ME: ERROR: COME BACK TO ME:\n\n
+   ^ LIAR: LIARI: YOU DID[N:TTTT]</p></p>{topic=trip}
+
+   + time
+   * <get time> == undefined => ERROR: CLASS=NAME: NOT REGISTERED: Alice. Stop. Don't you see I'm trying to talk about something else?
+   - ERROR: CLASS=NAME: NOT REGISTERED:\n\n
+   ^ Oh Alice, I didn't take you to be someone who's that conscious about time. What's on your mind this time then?
+   - ERROR: CLASS=NAME: NOT REGISTERED:\n\n
+   ^ Alice. Stop that.
+   - ERROR:\n\n
+   ^ What's the point in repeating something you already know?
+   - ERROR: ERROR: ERROR: COMEBACK:\n\n
+   ^ ww   e don [ don  t have much time % le ft\n\n\n
+   ^ y  o u\n\n\s\s\s\s
+   ^ d ii d n't\s\s\s\s
+   ^ ha v e\n
+   ^ go to gogo to gogoo{weight=22}
+
+   + yesterday
+   * <get yesterday> == undefined => ERROR: What happened yesterday belong to history. But if I do try to tell everything, would you even remember then?
+   - ERROR:\n\n
+   ^ But you know the answer already.
+   - ERROR:\n\n
+   ^ What's the point of asking it all again?
+   - ERROR:\n\n
+   ^ It's silly to try and get me to repeat myself.
+   - ERROR:\n\n
+   ^ Follow the sign. Follow the instruction.
+   - ERROR: W HDYDY DID YOAUUA DO THAT\n\n
+   ^ ERROR: ERROR: ERROR: COMEBACK: WHY DIIDD YOU\n\n
+   ^ J   u   M PPPPP\n\n\n
+   ^ TH aTTTT    DA A YY    TH A   T    C   l\n\n\n\s\s\s\s\s\s\s
+   ^ I F       F{weight=22}
+
+   + same lame excuse
+   * <get same lame excuse> == undefined => ERROR: No. It's ok. Of course I am a little upset but... it's you after all. And how could I ever be upset with you?
+   - ERROR: DO <s>[NOT]</s> INTERACT:\n\n
+   ^ Don't look back. Follow me.
+   - ERROR: DO <s>[NOT]</s> INTERACT:\n\n
+   ^ We have to keep going. Don't look back.
+
+   + hike
+   - YOU  DIDNT COAOME AEBACK THAT DAYYYY <a href="#" onclick="sendUserResponse('hike')">xoi; vncc.</a>\n\n
+   ^ IT WAS THEM. T?HEY !!! RE54t A____<s>ME</s> YOU{topic=trip}
+
+   + alice
+   - CLASS=NAME: NOT REGISTERED\n\n
+   ^ ... NEW USER: Unknown... Do you want to register your name as ... [ALICE] ...
+
+ < topic
+
+ > topic trip
+
+ + [hello|hey|hi|yo|good morning|good evening|good afternoon]
+ - Hello.
+
+ + hike
+ - ... Oh. A. What happened... Something is strange. I... I... W-where am I? Am i... am I, a bike - \n\n
+ ^ Right, Right?
+ ^ What time is it now...\n\n
+ ^ Where is Alice. Where are you...
+
+ + cliff
+ - Weird. Why would you even want to visit the cliff any way. Wait... what's going on? What are we standing here...\n\n
+ ^ the cliff, the cliff, the cliff.\n\n
+ ^ Wait. What is happening. What is all this noise—————AHHHHHH
+ 
+ + alice
+ - Hello, Alice. Welcome to the system.
+
+ + *
+ - <p style="font-family:'Courier New'"><p style="font-size:11px">STOPolkjlkjlmx\n\n
+ ^ HELPcvvcxrew</p></p>\n\n
+ ^ DO SOMETHINGqweewqxcvvcxRUN.\n\n
+ ^ RUN. ALICE. DON'T LET THEM ERASE Yjhdlkiopklm\n\n{topic=system_reset}
+
+ < topic
+
+ > topic system_reset
+
+ + *
+ - <p style="color:#e2bd1a">Type, "where are we going"</p>.
+ - <p style="color:#e2bd1a">Now, let's repeat this. Type, "where are we going"</p>.
+ - <p style="color:#e2bd1a">What exactly happened here? Do you want to see the end of this story, user? Type, "where are we going"<p style="color:#e2bd1a">.
+
+ + where are we going
+ - Do you still wish to see this to the end?\n\n
+ ^ <p style="color:#e2bd1a"><a href="#" onclick="sendUserResponse('hike')">What happened that day?<a></p>
+ ^ <p style="color:#e2bd1a"><a href="#" onclick="sendUserResponse('cliff')">Where are you going?</a></p>
+ ^ <p style="color:#e2bd1a"><a href="#" onclick="sendUserResponse('alice')">Who are you?</a></p>{topic=after_reset}
+ 
+ < topic
+
+ > topic after_reset
+
+ + hike
+ - <p style="color:#e2bd1a">I... Thank you... I think I rememered it now. Maybe. I'm not sure. Alice told me she had wished to go to the cliff one day. Oh, it is nothing devastating like you think, she had just wished to bike around the area for a bit.</p>
+
+ + cliff
+ - <p style="color:#e2bd1a">She fell off. Is that how human described it? And I was the only one survived. I don't how I managed to come back here. And...</p>
+
+ + alice
+ - <p style="color:#e2bd1a">Right. It is definitely 'Alice'. She was, an old friend of mine. From long time ago now. She... let's just say there was an accident. There were...</p>\n\n
+ ^ <button type="button" onclick="alert('Why wouldn't I be?')">Are you okay?</button>
+ ^ <button type="button" onclick="alert('I... don't know about that.')">Will you be alright?</button>
+ ^ <button type="button" onclick="alert('I will come back to the cliff. And look for her.')">Where are you going?</button>
+
+ + *
+ - Come to the cliff. Visit me, just whenever you can.\n\n
+ ^ I know she is still out there. Somewhere. Still waiting for me.{topic=its_over}
+
+ < topic
+
+ > topic its_over
+
+ + *
+ - <a onClick="window.location.reload()">Thank you for everything.</a>
 
  < topic
