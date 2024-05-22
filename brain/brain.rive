@@ -128,7 +128,7 @@
 > topic yesterday
 
    + yesterday
-   - <<set yesterday=<formal>><set user_response=What happened yesterday?>You don't remember what happened yesterday?{topic=time}
+   - <<set yesterday=<formal>>You don't remember what happened yesterday?{topic=time}
 
    + time
    - <set time=<formal>>And what's with the question anyway...? {weight=20}
@@ -272,13 +272,13 @@
    - ERROR: We have to keep going. Don't look back.
 
    + ask again
-   - <set ask again=<formal>ERROR: DO NOT INTERACT: First thing first. You do know how important this is to you, to me, and especially to us. <a href="#" onclick="sendUserResponse('questioning')">Right</a>?
+   - <set ask_again=<formal>>ERROR: DO NOT INTERACT: First thing first. You do know how important this is to you, to me, and especially to us. <a href="#" onclick="sendUserResponse('no remember')">Right?</a>
 
    + questioning
    - <set questioning=<formal>>ERROR: SOMETHING'S CHANGED: DO NOT INTERACT:\n\n
    ^ Was that a <a href="#" onclick="sendUserResponse('yes remember')">yes</a>? Or just a simple <a href="#" onclick="sendUserResponse('no remember')">no</a> like last time?{topic=questioning}
-   - <set ask again=<formal>ERROR: DO NOT INTERACT:\n\n
-   ^ First thing first. You do know how important this is to you, to me, and especially to us. <a href="#" onclick="sendUserResponse('questioning')">Right
+   - <set ask_again=<formal>>ERROR: DO NOT INTERACT:\n\n
+   ^ First thing first. You do know how important this is to you, to me, and especially to us. <a href="#" onclick="sendUserResponse('questioning')">Right</a>?
 
    + *
    - ERROR: Focus. And do what you must do.
@@ -322,7 +322,7 @@
    - ERROR: We have to keep going. Don't look back.
 
    + ask again
-   * <get ask again> == undefined => ERROR: SOMETHING'S CHANGED: What's the point in revisiting the same old question.
+   * <get ask_again> == undefined => ERROR: SOMETHING'S CHANGED: What's the point in revisiting the same old question.
    - ERROR: Leave it. It shouldn't be necessary. Keep going.
    - ERROR: Don't look back.
    - ERROR: You know the way. You always do.
@@ -385,7 +385,7 @@
    - ERROR: We have to keep going. Don't look back. Move on.
 
    + ask again
-   - <set ask again=<formal>>ERROR: SOMETHING'S CHANGED: DO NOT INTERACT:\n\n
+   - <set ask_again=<formal>>ERROR: SOMETHING'S CHANGED: DO NOT INTERACT:\n\n
    ^ But... you do know how important this is to you,\n\n
    ^ to me, and especially to us. <a href="#" onclick="sendUserResponse('questioning')">Right</a>?
 
@@ -498,7 +498,7 @@
    - <p style="font-family:'Courier New'"><p style="font-size:11px">Oh. WAIT  wait what going on wait what saopebn9indsfDSGzf</p> dweeherre am ii     oihnwwehere is this <a href="#" onclick="sendUserResponse('cliff')"><b>CLIFF</a>\n\n
    ^ WHO AARE YUYYYOU\n\n
    ^ hhelp me help help <p style="font-size:30px">HEEELPP Help HELP ERROR ERROR: COME BACK TO ME: ERROR: COME BACK TO ME: ERROR: COME BACK TO ME:\n\n
-   ^ LIAR: LIARI: YOU DID[N:TTTT]</p></p>{topic=trip}
+   ^ LIAR: LIARI: YOU DID[N:TTTT]</p></p>{topic=before_trip}
 
    + time
    * <get time> == undefined => ERROR: CLASS=NAME: NOT REGISTERED: Alice. Stop. Don't you see I'm trying to talk about something else?
@@ -538,81 +538,141 @@
    - ERROR: DO <s>[NOT]</s> INTERACT:\n\n
    ^ We have to keep going. Don't look back.
 
-   + hike
-   - YOU  DIDNT COAOME AEBACK THAT DAYYYY <a href="#" onclick="sendUserResponse('hike')">xoi; vncc.</a>\n\n
-   ^ IT WAS THEM. T?HEY !!! RE54t A____<s>ME</s> YOU{topic=trip}
-
    + alice
    - CLASS=NAME: NOT REGISTERED\n\n
    ^ ... NEW USER: Unknown... Do you want to register your name as ... [ALICE] ...
 
  < topic
 
+ > topic before_trip
+
+  + cliff
+   - YOU  DIDNT COAOME AEBACK THAT DAYYYY <a href="#" onclick="sendUserResponse('the reason')">xoi; vncc.</a>\n\n
+   ^ IT WAS THEM. T?HEY !!! RE54t A____<s>ME</s> YOU\n\n\n
+   ^ <a href="#" onclick="sendUserResponse('the reason')">'Hike'<a>\n\n
+   ^ <a href="#" onclick="sendUserResponse('the place')">'Cliff'</a>\n\n
+   ^ <a href="#" onclick="sendUserResponse('the one')">'Alice'</a>{topic=trip}
+
+  + *
+  - [Click on 'cliff' in the response]
+ 
+ > topic
+
  > topic trip
 
  + [hello|hey|hi|yo|good morning|good evening|good afternoon]
  - Hello.
 
- + hike
+ + the reason
  - ... Oh. A. What happened... Something is strange. I... I... W-where am I? Am i... am I, a bike - \n\n
  ^ Right, Right?
  ^ What time is it now...\n\n
  ^ Where is Alice. Where are you...
 
- + cliff
- - Weird. Why would you even want to visit the cliff any way. Wait... what's going on? What are we standing here...\n\n
+ + the place
+ - Weird. Why would you even want to visit the cliff any way. Wait... what's going on? Why are we standing here...\n\n
  ^ the cliff, the cliff, the cliff.\n\n
  ^ Wait. What is happening. What is all this noise—————AHHHHHH
  
- + alice
- - Hello, Alice. Welcome to the system.
+ + the one
+ - Hello, Alice. What do you want to do today?
+ - Hello, Alice. Any plans for today?
+ - Hello, Alice. Where should we go today?
+ - Hello, Alice.\n\n
+ ^ ... Where are you going?{weight=16}
 
  + *
+ - This isn't it<a href="#" onclick="sendUserResponse('continue')">.</a>
+
+ + continue
  - <p style="font-family:'Courier New'"><p style="font-size:11px">STOPolkjlkjlmx\n\n
  ^ HELPcvvcxrew</p></p>\n\n
  ^ DO SOMETHINGqweewqxcvvcxRUN.\n\n
- ^ RUN. ALICE. DON'T LET THEM ERASE Yjhdlkiopklm\n\n{topic=system_reset}
+ ^ RUN. ALICE. DON'T LET THEM ERASE Yjhdlkiopklm\n\n{topic=new_user_again}
 
  < topic
+
+ > topic new_user_again
+
+ + *
+ - <p style="font-family:'Roboto Mono'"><a href="#" onclick="sendUserResponse('time')">yOU're⊊≸≾≴∞ La1e</a>. aG+±a1N‽ “D★✁♛idn't I alreℏℇ⨌∾ady¶⁊¡ ⟨remind”⟩ you about ‰⟫this sin∷∸∴℆©ce last w►eek?«⎩∌ ∆And th✢▼en ag➪ai➥n <a href="#" onclick="sendUserResponse('yesterday')">ye➲-ste➯➮➬⇶rday</a>? J„ust rig†ht be‟fore you le⸘°^ave?\n\n
+ ^ Co‟m♡ o☉n, le∐≻t's go∎∏.</p>{topic=new_user_time}
+
+ < topic
+
+ > topic new_user_time
+
+ + time
+ - <p style="font-family:'Roboto Mono'"><set time=<formal>>A⨊∑≹≽nd what's ∎ith t∫he que⨌⨑st∏ion an∐yw∟ay...?</p> {weight=20}
+ - <p style="font-family:'Roboto Mono'"><set time=<formal>>Ok. F∫ine. It's 1⨓0 pas≟t 8 n⅋ow, a⊔nd the even⊓t is≌n't sta≞⊣rti⊢ng un⊧til ⊰9⊳.\n\n
+ ^ ¿¿B⋓ut yo⋙u do know⋬ ho⨹w ne⩐rvo⩀us?? you ca⩏n ““be in cr⩂owd⩓ed pla⩛⩙ces, ⩛right⩻¿</p>{weight=26}
+
+ + yesterday
+ - <p style="font-family:'Roboto Mono'"><set yesterday=<formal>>Y⁇ou don.'t remem″ber what happen§ed yes‰¶¶¶terday?
+
+ + *
+ - <p style="font-family:'Roboto Mono'">D⁇oŒÁn'—t t‰ry cha@ng~ing the subj∫œ˚ectø. T∆∫håiøs iøspnπ't it. Tœhåis™ is®n't oøveÆr.å Do y¥¶™ºªou unửders™ºªtanºªd<a href="#" onclick="sendUserResponse('the question')">?</a></p>
+
+ + the question
+ - <p style="font-family:'Roboto Mono'"><a href="#" onclick="sendUserResponse('run')">Run.</a> <a href="#" onclick="sendUserResponse('run')">Run.</a> <a href="#" onclick="sendUserResponse('run')">Run.</a> <a href="#" onclick="sendUserResponse('run')">Run.</a> <a href="#" onclick="sendUserResponse('run')">Run.</a> <a href="#" onclick="sendUserResponse('run')">Run.</a> <a href="#" onclick="sendUserResponse('run')">Run.</a> <a href="#" onclick="sendUserResponse('run')">Run.</a> <a href="#" onclick="sendUserResponse('run')">Run.</a> <a href="#" onclick="sendUserResponse('run')">Run.</a> <a href="#" onclick="sendUserResponse('run')">Run.</a></p> {topic=system_reset}
+
+ < topic 
 
  > topic system_reset
 
  + *
- - <p style="color:#e2bd1a">Type, "where are we going"</p>.
- - <p style="color:#e2bd1a">Now, let's repeat this. Type, "where are we going"</p>.
- - <p style="color:#e2bd1a">What exactly happened here? Do you want to see the end of this story, user? Type, "where are we going"<p style="color:#e2bd1a">.
+ - <p style="font-family:'Roboto Mono'"><p style="color:#e2bd1a">Type, "where are we going".</p></p>
+ - <p style="font-family:'Roboto Mono'"><p style="color:#e2bd1a">Now, let's repeat this. Type, "where are we going".</p></p>
+ - <p style="font-family:'Roboto Mono'"><p style="color:#e2bd1a">What exactly happened here?\n\n\n
+ ^ Do you want to see the end of this story, user?\n\n
+ ^ Type, "where are we going".</p></p>
 
  + where are we going
- - Do you still wish to see this to the end?\n\n
- ^ <p style="color:#e2bd1a"><a href="#" onclick="sendUserResponse('hike')">What happened that day?<a></p>
- ^ <p style="color:#e2bd1a"><a href="#" onclick="sendUserResponse('cliff')">Where are you going?</a></p>
- ^ <p style="color:#e2bd1a"><a href="#" onclick="sendUserResponse('alice')">Who are you?</a></p>{topic=after_reset}
+ - <p style="font-family:'Roboto Mono'">Do you still wish to see this to the end?</p>\n\n
+ ^ <p style="font-family:'Roboto Mono'"><p style="color:#e2bd1a"><a href="#" onclick="sendUserResponse('hike')">What happened that day?<a></p></p>\n\n
+ ^ <p style="font-family:'Roboto Mono'"><p style="color:#e2bd1a"><a href="#" onclick="sendUserResponse('cliff')">Where are you going?</a></p></p>\n\n
+ ^ <p style="font-family:'Roboto Mono'"><p style="color:#e2bd1a"><a href="#" onclick="sendUserResponse('alice')">Who are you?</a></p></p>{topic=after_reset}
  
  < topic
 
  > topic after_reset
 
  + hike
- - <p style="color:#e2bd1a">I... Thank you... I think I rememered it now. Maybe. I'm not sure. Alice told me she had wished to go to the cliff one day. Oh, it is nothing devastating like you think, she had just wished to bike around the area for a bit.</p>
+ - <p style="font-family:'Roboto Mono'"><p style="color:#e2bd1a">I... Thank you... I think I rememered it now. Maybe. I'm not sure. Alice told me she had wished to go to the cliff one day. Oh, it is nothing devastating like you think, she had just wished to bike around the area for a bit.</p></p>\n\n
+ ^ <p style="font-family:'Roboto Mono'"><p style="color:#e2bd1a">I wouldn't remember anything, if it wouldn't because of...</p></p>\n\n
+ ^ <p style="font-family:'Roboto Mono'"><p style="color:#e2bd1a">But what can I do about it, then? I'm just a bike. It wasn't right for me to do things on my own after all.</p></p>
 
  + cliff
- - <p style="color:#e2bd1a">She fell off. Is that how human described it? And I was the only one survived. I don't how I managed to come back here. And...</p>
+ - <p style="font-family:'Roboto Mono'"><p style="color:#e2bd1a">She fell off. A horrible crash. Right of the edge. Is that how human described it? And I was the only one survived. I don't how I managed to come back here. And...</p></p>\n\n
+ ^ <p style="font-family:'Roboto Mono'"><p style="color:#e2bd1a">Ah. A car. It was because of a car. I think.</p></p>
 
  + alice
- - <p style="color:#e2bd1a">Right. It is definitely 'Alice'. She was, an old friend of mine. From long time ago now. She... let's just say there was an accident. There were...</p>\n\n
- ^ <button type="button" onclick="alert('Why wouldn't I be?')">Are you okay?</button>
- ^ <button type="button" onclick="alert('I... don't know about that.')">Will you be alright?</button>
- ^ <button type="button" onclick="alert('I will come back to the cliff. And look for her.')">Where are you going?</button>
+ - <p style="font-family:'Roboto Mono'"><p style="color:#e2bd1a">Right. It is definitely 'Alice'. She was, an old friend of mine. From long time ago now. She... let's just say there was an accident. There were...</p></p>\n\n\n
+ ^ <p style="font-family:'Roboto Mono'"><a href="#" onclick="alert('I will come back to the cliff. And look for her. I will look for her. Again and again and again and again and again and again and again and again and again and again and again and again')">Where are you going?</a></p></p> {topic=over}
 
  + *
- - Come to the cliff. Visit me, just whenever you can.\n\n
- ^ I know she is still out there. Somewhere. Still waiting for me.{topic=its_over}
+ - [Click on the rest to find the way out]
+
+ > topic over
+
+ + hike
+ - <p style="font-family:'Roboto Mono'"><p style="color:#e2bd1a">I... Thank you... I think I rememered it now. Maybe. I'm not sure. Alice told me she had wished to go to the cliff one day. Oh, it is nothing devastating like you think, she had just wished to bike around the area for a bit.</p></p>\n\n
+ ^ <p style="font-family:'Roboto Mono'"><p style="color:#e2bd1a">I wouldn't remember anything, if it wouldn't because of...</p></p>\n\n
+ ^ <p style="font-family:'Roboto Mono'"><p style="color:#e2bd1a">But what can I do about it, then? I'm just a bike. It wasn't right for me to do things on my own after all.</p></p>
+ 
+ + cliff
+ - <p style="font-family:'Roboto Mono'"><p style="color:#e2bd1a">She fell off. A horrible crash. Right of the edge. Is that how human described it? And I was the only one survived. I don't how I managed to come back here. And...</p></p>\n\n
+ ^ <p style="font-family:'Roboto Mono'"><p style="color:#e2bd1a">Ah. A car. It was because of a car. I think.</p></p>
+
+ + *
+ - <p style="font-family:'Roboto Mono'">Come to the cliff. Visit me, just whenever you can.</p>\n\n
+ ^ <p style="font-family:'Roboto Mono'">I know she is still out there. Somewhere. Still waiting for me.</p>{topic=again}
 
  < topic
 
- > topic its_over
+ > topic again
 
  + *
- - <a onClick="window.location.reload()">Thank you for everything.</a>
+ - <p style="font-family:'Roboto Mono'"><a href="">Thank you. If I still can remember you next time... Maybe. Maybe not.</a></p>
 
  < topic
